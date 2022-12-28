@@ -36,7 +36,6 @@ void main()
                 find.data[j] = find.data[j+1];
                 find.data[j+1] = temp;
             }
-
         }
     }
     //showing the sorted data
