@@ -1,58 +1,12 @@
-#include<stdio.h>
-
-int queue[100];
-int front=0,back=0;
-
-void enqueue(int var)
-{
-    queue[back] = var;
-    back++;
-}
-
-void dequeue()
-{
-    queue[front] = 0;
-    front++;
-}
-
-int visited[7] = {0};
-
-int main()
-{
-    int i,j,n;
-    int N  = 6;
-    int graph[10][10];
-    
-    printf("Enter number of vertices:");
-    scanf("%d",&n);
-
-    printf("\nEnter adjecency matrix of the graph:");
-    for(i=0;i<n;i++)
+printf("\nDecoded message is: ");
+    mul(inv_key, result, decode);
+    for (i = 0; i < 10; i++)
     {
-       for(j=0;j<n;j++)
-       {
-            scanf("%d",&graph[i][j]);
-       }
-    }
-
-    enqueue(1);
-    visited[0] = 1;
-    printf("\nOutput: ");
-    while(front != back)
-    {
-        int current = queue[front];
-
-        printf("%d ", current);
-
-        dequeue();
-        for(int i=0;i<6;i++)
+        for ( j = 0; j < 3; j++)
         {
-            if((graph[current-1][i] == 1) && (visited[i] == 0))
-            {
-                visited[i] = 1;
-                enqueue(i+1);
-            }
+            if ( ((decode[j][i]+96)) >= 97 && ((decode[j][i]+96) <= 123))
+                printf("%c", (decode[j][i] + 96) );
+            else if ( decode[j][i] == 32)
+                printf(" ");
         }
     }
-    return 0;
-}
