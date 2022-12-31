@@ -23,18 +23,16 @@ int main()
     int N  = 6;
     int graph[10][10];
     
-    printf("Enter number of vertices: ");
+    printf("Enter number of vertices:");
     scanf("%d",&n);
 
-    printf("\nEnter adjecency matrix of the graph: \n");
+    printf("\nEnter adjecency matrix of the graph:");
     for(i=0;i<n;i++)
     {
-        printf("%d Row: ",i+1);
-        for(j=0;j<n;j++)
-        {
+       for(j=0;j<n;j++)
+       {
             scanf("%d",&graph[i][j]);
-        }
-        printf("\n");
+       }
     }
 
     enqueue(1);
