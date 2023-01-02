@@ -17,7 +17,6 @@ void mul(int first[3][3], int second[3][10], int result[3][10])
         result[c][d] = sum;
       }
     }
- 
 }
 int main()
 {
@@ -53,6 +52,7 @@ int main()
                 break;
     }
     mul( key, encode, result);
+    printf("\nThe Given Message is : ABBREVIATIONS\n");
     printf("\nEncoded message to be sent: ");
     for (i = 0; i < 5; i++)
     {
